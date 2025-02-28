@@ -1004,5 +1004,8 @@ def update_regional_bar(year_selected, disorders_selected):
     return fig
 
 # Exécuter l'application
+server = app.server
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    import os
+    port = int(os.environ.get('PORT', 8080))
+    app.run_server(host='0.0.0.0', port=port)
